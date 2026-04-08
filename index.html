@@ -7,19 +7,58 @@
 </head>
 <body>
 
-<h1>Live Golf Group Tracker</h1>
-<h2>Best ball scoring for up to 3 teams.</h2>
+  <h1>Live Golf Group Tracker</h1>
+  <h3>Best Ball (3 Teams)</h3>
 
-<button onclick="createRound()">Create round</button>
+  <!-- CREATE / JOIN -->
+  <div>
+    <button onclick="createRound()">Create Round</button>
 
-<div id="roundSection" style="display:none;">
-  <h3>Round Code: <span id="roundCode"></span></h3>
+    <br><br>
 
-  <div id="teams"></div>
+    <input id="joinCode" placeholder="Enter Code">
+    <button onclick="joinRound()">Join Round</button>
+  </div>
 
-  <button onclick="addScore()">Add Score</button>
-</div>
+  <hr>
 
-<script src="app.js"></script>
+  <!-- ROUND INFO -->
+  <div id="roundSection" style="display:none;">
+    <h2>Round Code: <span id="roundCode"></span></h2>
+
+    <!-- TEAMS -->
+    <h3>Teams</h3>
+
+    <div>
+      <button onclick="createTeam('Team 1')">Add Team 1</button>
+      <button onclick="createTeam('Team 2')">Add Team 2</button>
+      <button onclick="createTeam('Team 3')">Add Team 3</button>
+    </div>
+
+    <div id="teams"></div>
+
+    <hr>
+
+    <!-- PLAYERS -->
+    <h3>Add Player</h3>
+    <input id="playerName" placeholder="Player name">
+    <input id="teamId" placeholder="Team ID">
+    <button onclick="addPlayerToTeam()">Add Player</button>
+
+    <hr>
+
+    <!-- SCORES -->
+    <h3>Add Score</h3>
+    <input id="playerId" placeholder="Player ID">
+    <input id="hole" placeholder="Hole #" type="number">
+    <input id="strokes" placeholder="Strokes" type="number">
+    <button onclick="submitScore()">Save Score</button>
+
+  </div>
+
+  <!-- SUPABASE -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+  <script src="app.js"></script>
+
 </body>
 </html>
