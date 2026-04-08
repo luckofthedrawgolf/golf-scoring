@@ -10,36 +10,27 @@
   <h1>Live Golf Group Tracker</h1>
   <h3>Best Ball (3 Teams)</h3>
 
-  <!-- CREATE / JOIN -->
   <div>
     <button onclick="createRound()">Create Round</button>
-
     <br><br>
-
     <input id="joinCode" placeholder="Enter Code">
     <button onclick="joinRound()">Join Round</button>
   </div>
 
   <hr>
 
-  <!-- ROUND INFO -->
   <div id="roundSection" style="display:none;">
     <h2>Round Code: <span id="roundCode"></span></h2>
 
-    <!-- TEAMS -->
     <h3>Teams</h3>
-
     <div>
       <button onclick="createTeam('Team 1')">Add Team 1</button>
       <button onclick="createTeam('Team 2')">Add Team 2</button>
       <button onclick="createTeam('Team 3')">Add Team 3</button>
     </div>
 
-    <div id="teams"></div>
-
     <hr>
 
-    <!-- PLAYERS -->
     <h3>Add Player</h3>
     <input id="playerName" placeholder="Player name">
     <input id="teamId" placeholder="Team ID">
@@ -47,17 +38,14 @@
 
     <hr>
 
-    <!-- SCORES -->
     <h3>Add Score</h3>
     <input id="playerId" placeholder="Player ID">
     <input id="hole" placeholder="Hole #" type="number">
     <input id="strokes" placeholder="Strokes" type="number">
     <button onclick="submitScore()">Save Score</button>
-
   </div>
 
-  <!-- SUPABASE -->
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="app.js"></script>
 
 </body>
